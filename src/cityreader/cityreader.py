@@ -24,7 +24,7 @@ class City():
 cities = []
 
 def cityreader(cities=[]):
-    with open('./cities.csv') as city:
+    with open("src/cityreader/cities.csv") as city:
         city_data = csv.reader(city)
         next(city_data)
         for each in city_data:
@@ -41,7 +41,7 @@ cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c)
+    print(f"({c.name}, {c.lat}, {c.lon})")
 
 # STRETCH GOAL!
 #

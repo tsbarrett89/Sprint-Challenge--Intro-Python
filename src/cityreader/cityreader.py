@@ -83,10 +83,10 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     lon_range = [lon1, lon2]
     lon_range.sort()
 
-    within = [f"{each.name}: ({each.lat},{each.lon}" for each in cities if int(each.lat) in range(lat_range[0], lat_range[1]) and int(each.lon) in range(lon_range[0], lon_range[1])]
+    within = [each for each in cities if int(each.lat) in range(lat_range[0], lat_range[1]) and int(each.lon) in range(lon_range[0], lon_range[1])]
     
     for each in within:
-        print(each)
+        print(f"{each.name}: ({each.lat},{each.lon})")
       
   
   # Go through each city and check to see if it falls within 
